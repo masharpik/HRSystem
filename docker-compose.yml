@@ -1,0 +1,13 @@
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: masharpik_user
+      POSTGRES_PASSWORD: masharpik_password
+      POSTGRES_DB: masharpik_db
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    ports:
+      - "5431:5432"
